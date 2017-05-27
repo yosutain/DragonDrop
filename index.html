@@ -1,0 +1,122 @@
+ <!DOCTYPE html>
+<html>
+
+
+	<head>
+
+	<title> Dragon Drop </title>
+	
+		<!-- FavIcon -->
+		<link rel="icon" href="https://dl.dropbox.com/s/7sosry4qeps9fvl/favicon.png">
+	
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/Style.css">
+
+		<!-- Angular -->	
+		<script src="http://code.angularjs.org/1.5.5/angular.js"> </script>
+		<script src="http://code.angularjs.org/1.5.5/angular-resource.js"> </script>
+		
+		<!-- JS -->	
+		<script src="js/Script.js"></script>
+		
+		<!-- Piwik -->
+		<script type="text/javascript">
+		  var _paq = _paq || [];
+		  _paq.push(['trackPageView']);
+		  _paq.push(['enableLinkTracking']);
+		  (function() {
+			var u="//piwik-jettaturatiger.rhcloud.com/";
+			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			_paq.push(['setSiteId', 1]);
+			_paq.push(['enableHeartBeatTimer']);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		  })();
+		</script>
+		<noscript><p><img src="//piwik-jettaturatiger.rhcloud.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+		<!-- End Piwik Code -->
+		
+	</head>
+
+<!-- ................................................................. -->
+
+	<body ng-app="myApp" ng-controller="myCtrl" ng-keyup="keydown($event)"> 
+	
+	<div id="myBackground"></div>
+	
+	<ul id="contentContainer">
+	
+		<li id="previewButton">
+			<div preview-questionaire>Preview</div>
+		</li>
+	
+		<ul id="elementContainer">
+			<li id="firstContentObject" class="firstContentObject">
+				<div class="addElementButton" add-first-element>Rating</div>
+				<div class="dragBox" draggable></div>
+			</li>
+			
+			<li id="secondContentObject" class="secondContentObject">
+				<div class="addElementButton" add-second-element>Question</div>
+				<div class="dragBox" draggable></div>
+			</li>
+			
+			<li id="fourthContentObject" class="fourthContentObject">
+				<div class="addElementButton" add-fourth-element>Multiple Choice</div>
+				<div class="dragBox" draggable></div>
+			</li>
+			
+			<li id="thirdContentObject" class="thirdContentObject">
+				<div class="addElementButton" add-third-element>Ending</div>
+				<div class="dragBox" draggable></div>
+			</li>
+		</ul>
+			
+			<li>
+				<div class="myButtons" clear-receiver>New</div>
+			</li>
+			  
+			  <li>
+				<div class="myButtons" save-element>SaveAsNew</div>
+			</li>
+
+			<li>
+				<div class="myButtons" get-available>Get Loadables</div>
+			</li>
+			
+			<li>
+				<ul id="loadableContainer">	
+				</ul>
+			</li>
+			
+		</ul>
+		
+		
+	<div hide-me id="closeModificationList">
+	</div>
+    <ul id="modificationList" >
+	</ul>
+
+	<div id="receiverContainer" ng-class="{scrollableClass: receiverHover}" ng-mouseenter="receiverHover = true" ng-mouseleave="receiverHover = false">
+	</div>
+	
+	<ul id="binObject" class="receiverObject">
+	</ul>
+	
+	<div id="flowChart" ng-class="{scrollableClass: flowHover}" ng-mouseenter="flowHover = true" ng-mouseleave="flowHover = false">
+	</div>
+	
+	<div id="lineContainer">
+		<svg id="myCanvas">
+		</svg>
+	</div>
+		
+	<div close-preview-container id="closePreviewContainer">
+	</div>	
+	<div id="previewContainer">
+	</div>
+
+	</body>
+
+
+</html>
